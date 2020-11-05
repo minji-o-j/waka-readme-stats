@@ -157,7 +157,7 @@ def make_graph(percent: float):
     done_block = '█'
     empty_block = '-'
     pc_rnd = round(percent)
-    return f"{done_block * int(pc_rnd / 4)}{empty_block * int(25 - int(pc_rnd / 4))}"
+    return f"[{done_block * int(pc_rnd / 4)}{empty_block * int(25 - int(pc_rnd / 4))}]"
 
 
 def make_list(data: list):
@@ -248,7 +248,7 @@ def generate_commit_list(tz):
     title = translate['I am an Early'] if morning + daytime >= evening + night else translate['I am a Night']
     one_day = [
         {"name": "🌞 " + translate['Morning'], "text": str(morning) + " commits",
-         "["+ "percent": round((morning / sumAll) * 100, 2)+"]"},
+         "percent": round((morning / sumAll) * 100, 2)},
         {"name": "🌆 " + translate['Daytime'], "text": str(daytime) + " commits",
          "percent": round((daytime / sumAll) * 100, 2)},
         {"name": "🌃 " + translate['Evening'], "text": str(evening) + " commits",
