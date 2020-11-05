@@ -342,7 +342,7 @@ def get_waka_time_stats():
                 os_list = make_list(data['data']['operating_systems'])
             stats = stats + '💻 ' + translate['operating system'] + ': \n' + os_list + '\n\n'
 
-        stats += '```\n\n'
+        #stats += '```\n\n'
         if empty:
             return ""
     return stats
