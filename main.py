@@ -248,7 +248,7 @@ def generate_commit_list(tz):
     title = translate['I am an Early'] if morning + daytime >= evening + night else translate['I am a Night']
     one_day = [
         {"name": "🌞 " + translate['Morning'], "text": str(morning) + " commits",
-         "percent": round((morning / sumAll) * 100, 2)},
+         "["+ "percent": round((morning / sumAll) * 100, 2)+"]"},
         {"name": "🌆 " + translate['Daytime'], "text": str(daytime) + " commits",
          "percent": round((daytime / sumAll) * 100, 2)},
         {"name": "🌃 " + translate['Evening'], "text": str(evening) + " commits",
@@ -256,6 +256,7 @@ def generate_commit_list(tz):
         {"name": "🌙 " + translate['Night'], "text": str(night) + " commits",
          "percent": round((night / sumAll) * 100, 2)},
     ]
+    
     dayOfWeek = [
         {"name": translate['Monday'], "text": str(Monday) + " commits", "percent": round((Monday / sum_week) * 100, 2)},
         {"name": translate['Tuesday'], "text": str(Tuesday) + " commits",
