@@ -509,7 +509,7 @@ if __name__ == '__main__':
         star_me()
         rdmd = decode_readme(contents.content)
         new_readme = generate_new_readme(stats=waka_stats, readme=rdmd)
-        committer = InputGitAuthor('minji','jminji98@gmail.com)
+        committer = InputGitAuthor('minji','jminji98@gmail.com')
         if new_readme != rdmd:
             try:
                 repo.update_file(path=contents.path, message='Updated with Dev Metrics',
