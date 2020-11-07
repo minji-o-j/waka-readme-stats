@@ -379,7 +379,7 @@ def generate_language_per_repo(result):
             "percent": percent
         })
 
-    title = translate['I Mostly Code in'] + ' ' + most_language_repo
+    title = '👩‍💻'+translate['I Mostly Code in'] + ' ' + most_language_repo
     return '**' + title + '** \n\n' + '```text\n' + make_list(data) + '\n\n```\n'
 
 
