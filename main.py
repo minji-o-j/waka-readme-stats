@@ -471,7 +471,7 @@ def get_stats(github):
 
 
 def star_me():
-    requests.put("https://api.github.com/user/starred/anmol098/waka-readme-stats", headers=headers)
+    requests.put("https://api.github.com/user/starred/minji-o-j/waka-readme-stats", headers=headers)
     
 
 def decode_readme(data: str):
@@ -509,7 +509,7 @@ if __name__ == '__main__':
         star_me()
         rdmd = decode_readme(contents.content)
         new_readme = generate_new_readme(stats=waka_stats, readme=rdmd)
-        committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
+        committer = InputGitAuthor('minji','jminji98@gmail.com) #('readme-bot', 'readme-bot@example.com')
         if new_readme != rdmd:
             try:
                 repo.update_file(path=contents.path, message='Updated with Dev Metrics',
