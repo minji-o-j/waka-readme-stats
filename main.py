@@ -210,12 +210,11 @@ def generate_commit_list(tz):
         result = run_query(
             createCommittedDateQuery.substitute(owner=repository["owner"]["login"], name=repository["name"], id=id))
         try:
-            local_tz = pytz.timezone('Asia/Seoul')
             committed_dates = result["data"]["repository"]["ref"]["target"]["history"]["edges"]
             for committedDate in committed_dates:
                 date = datetime.datetime.strptime(committedDate["node"]["committedDate"],
                                                   "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=pytz.utc).astimezone(
-                    local_tz)
+                     timezone(tz))
                 hour = date.hour
                 weekday = date.strftime('%A')
                 if 6 <= hour < 12:
